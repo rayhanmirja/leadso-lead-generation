@@ -1,0 +1,39 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #fafbfc;
+}
+
+.main {
+  flex: 1;
+  padding: 0 32px; /* Desktop Padding */
+  overflow-y: auto;
+}
+
+/* MASTER BOX CONTAINER - EVERYTHING SITS IN HERE */
+.content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto; /* CENTER EVERYTHING TOGETHER */
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* FIX FOR SAFARI FLEX SQUASHING */
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 0 24px; /* Tablet Padding */
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 0 16px; /* Mobile Padding */
+  }
+}

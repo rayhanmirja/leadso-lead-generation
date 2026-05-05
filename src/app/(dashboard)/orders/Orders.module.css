@@ -1,0 +1,353 @@
+.tableCard {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #eef0f2;
+  padding: 48px;
+  margin: 0 0 60px; /* CENTERING HANDLED BY PARENT LAYOUT */
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  min-width: 0; /* FIX FOR SAFARI FLEX SQUASHING */
+}
+
+@media (max-width: 1024px) {
+  .tableCard {
+    margin: 0 auto 40px;
+    padding: 32px;
+    width: 100%; /* LET CONTAINER HANDLE PADDING */
+  }
+}
+
+@media (max-width: 768px) {
+  .tableCard {
+    margin: 0 auto 32px;
+    padding: 24px 16px;
+    border-radius: 20px;
+    width: 100%; /* LET CONTAINER HANDLE PADDING */
+  }
+
+  .header {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .titleGroup h2 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .tableWrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .table {
+    min-width: 100%; /* LET IT FILL SCREEN */
+  }
+
+  .hideMobileJobId {
+    display: none !important;
+  }
+
+  .table td, .table th {
+    padding: 16px 8px; /* TIGHTER HORIZONTAL PADDING */
+  }
+
+  .cellQuery {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.titleGroup h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto; /* ENABLE HORIZONTAL SCROLL ON MOBILE */
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  width: 100% !important; /* FORCE FULL WIDTH ON SAFARI */
+  border-collapse: collapse;
+  min-width: 800px; /* ENSURE TABLE DOESN'T SQUASH TOO MUCH */
+  table-layout: auto;
+}
+
+.table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f1f5f9;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 20px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.selectedRow {
+  background-color: #f0fdf4 !important;
+}
+
+.cellId {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.cellQuery {
+  color: #1e293b;
+  font-weight: 500;
+  min-width: 250px;
+}
+
+.cellDate {
+  color: #64748b;
+}
+
+.cellLeads {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.statusCompleted {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.statusRunning {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.actionsCell {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  color: #64748b;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hideMobile {
+  display: table-cell;
+}
+
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none;
+  }
+}
+
+/* Mobile Modal */
+.mobileModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.mobileModal {
+  background: white;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: modalScale 0.2s ease-out;
+}
+
+@keyframes modalScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.mobileModalHeader h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+}
+
+.mobileModalHeader p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 24px;
+}
+
+.mobileModalActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileDownloadBtn {
+  background: #1a4d2e;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.mobileDownloadBtn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+}
+
+.mobileCloseBtn {
+  background: transparent;
+  color: #64748b;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* Loading & Empty States */
+.loadingCell, .emptyCell {
+  padding: 80px 20px !important;
+  text-align: center;
+  background: transparent !important;
+}
+
+.loadingFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f1f5f9;
+  border-top-color: #15803d;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+}
+
+.emptyState p {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.emptyState small {
+  opacity: 0.7;
+}
+
+.fullLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  gap: 12px;
+}
+
+.fullLoading h3 {
+  margin: 16px 0 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.fullLoading p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}

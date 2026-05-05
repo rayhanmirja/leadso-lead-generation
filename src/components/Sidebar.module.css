@@ -1,0 +1,150 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: var(--bg-color);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-green-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoInner {
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--accent-green);
+  border-radius: 50%;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  padding-left: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.navItem:hover {
+  background-color: white;
+  color: var(--text-primary);
+}
+
+.navItem.active {
+  background-color: white;
+  color: var(--accent-green);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--accent-green);
+}
+
+.promoCard {
+  margin-top: auto;
+  background-color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.promoCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(20, 83, 45, 0.4) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.promoIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.promoCard h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.promoCard p {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.promoBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--accent-green);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.promoBtn:hover {
+  background-color: var(--accent-green-hover);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

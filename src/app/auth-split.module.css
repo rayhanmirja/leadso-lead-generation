@@ -1,0 +1,201 @@
+.authWrapper {
+  display: flex;
+  min-height: 100vh;
+  background: white;
+}
+
+.authSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+}
+
+.visualSide {
+  flex: 1;
+  background: #111827;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.logoArea {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 10;
+}
+
+/* Form Styles */
+.formContainer {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 16px;
+  font-weight: 700;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 100px;
+  background: #15803d !important;
+  color: white !important;
+}
+
+.footerText {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.link {
+  color: #15803d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Mockup Visuals */
+.mockupContainer {
+  width: 100%;
+  max-width: 580px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
+}
+
+.mockupHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.mockupSearch {
+  height: 12px;
+  width: 60%;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.mockupBadge {
+  height: 12px;
+  width: 20%;
+  background: #15803d;
+  border-radius: 100px;
+}
+
+.mockupList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mockupItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.mockupCircle {
+  width: 32px;
+  height: 32px;
+  background: #e2e8f0;
+  border-radius: 50%;
+}
+
+.mockupLines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.line {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet & Wide Tablet */
+@media (max-width: 1100px) {
+  .visualSide { display: none; }
+  .authSide { 
+    padding: 80px 40px; 
+    width: 100%;
+    align-items: center;
+  }
+  .logoArea { 
+    left: 50%; 
+    transform: translateX(-50%);
+    top: 40px; 
+  }
+  .formContainer { 
+    max-width: 440px; 
+  }
+  .title { 
+    font-size: 36px; 
+    text-align: center; 
+  }
+  .subtitle { 
+    text-align: center; 
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 640px) {
+  .authSide { 
+    padding: 100px 20px 40px; 
+  }
+  .logoArea { 
+    top: 32px; 
+  }
+  .title { 
+    font-size: 28px; 
+  }
+  .subtitle { 
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .formContainer { 
+    max-width: 100%; 
+  }
+}
